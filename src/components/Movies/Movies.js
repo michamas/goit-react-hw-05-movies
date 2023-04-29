@@ -1,13 +1,17 @@
 import axios from 'axios';
 import { API_KEY, BASE_URL } from 'components/App.jsx';
-import { useEffect, useState } from 'react';
+import { Loader } from 'components/Loader.js';
+import { useState } from 'react';
 
 export const Movies = () => {
   const [titles, getTitles] = useState([]);
   const [query, setQuery] = useState('');
-  const searchedMoviesURL = 'search/movie';
+  const [isLoading, setLoading] = useState(false);
 
   const fetchSearchedMovies = async () => {
+    const searchedMoviesURL = 'search/movie';
+    setLoading(true);
+
     try {
       const response = await axios.get(BASE_URL + searchedMoviesURL, {
         params: {
@@ -16,10 +20,12 @@ export const Movies = () => {
         },
       });
       const results = [...response.data.results];
-      console.log(results);
+      //   console.log(results);
       getTitles(results);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,15 +47,17 @@ export const Movies = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="... any movie"
+          placeholder="... ANY MOVIE"
           onChange={handleChange}
         />
         <button type="submit">Get 'em</button>
       </form>
       <ul>
-        {titles.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          titles.map(movie => <li key={movie.id}>{movie.title}</li>)
+        )}
       </ul>
     </>
   );
