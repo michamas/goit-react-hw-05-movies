@@ -1,0 +1,9 @@
+.app {
+  /* height: 100vw; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #010101;
+  font-size: 40px;
+}
