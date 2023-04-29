@@ -1,8 +1,6 @@
-import { Link, NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Home } from './Home/Home.js';
-import { useEffect } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import { Movies } from './Movies/Movies.js';
 
