@@ -3,7 +3,7 @@ import { API_KEY, BASE_URL } from 'components/App.jsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieID } = useParams();
   const [cast, getCast] = useState([]);
 
@@ -40,3 +40,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

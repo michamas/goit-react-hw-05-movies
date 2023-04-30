@@ -3,7 +3,7 @@ import { API_KEY, BASE_URL } from 'components/App.jsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieID } = useParams();
   const [reviews, getReviews] = useState([]);
 
@@ -17,7 +17,7 @@ export const Reviews = () => {
         },
       });
       const results = response.data.results;
-      console.log(results);
+      // console.log(results);
       getReviews(results);
     } catch (error) {
       console.log(error);
@@ -39,3 +39,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

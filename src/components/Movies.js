@@ -4,7 +4,7 @@ import { Loader } from 'components/Loader.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Movies = () => {
+const Movies = () => {
   const [titles, getTitles] = useState([]);
   const [query, setQuery] = useState('');
   const [isLoading, setLoading] = useState(false);
@@ -70,3 +70,4 @@ export const Movies = () => {
     </>
   );
 };
+export default Movies;

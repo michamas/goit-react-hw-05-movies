@@ -3,7 +3,7 @@ import { API_KEY, BASE_URL } from 'components/App.jsx';
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [isLoading, setLoading] = useState(false);
   const { movieID } = useParams();
   const [details, getDetails] = useState([]);
@@ -58,3 +58,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

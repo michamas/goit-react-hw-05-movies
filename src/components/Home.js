@@ -4,7 +4,7 @@ import { Loader } from 'components/Loader.js';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Home = () => {
+const Home = () => {
   const [titles, getTitles] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
@@ -52,3 +52,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
