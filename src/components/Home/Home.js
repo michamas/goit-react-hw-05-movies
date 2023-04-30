@@ -19,7 +19,7 @@ export const Home = () => {
         },
       });
       const results = [...response.data.results];
-      console.log(results);
+      // console.log(results);
       getTitles(results);
     } catch (error) {
       console.log(error);

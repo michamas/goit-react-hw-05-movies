@@ -2,6 +2,7 @@ import axios from 'axios';
 import { API_KEY, BASE_URL } from 'components/App.jsx';
 import { Loader } from 'components/Loader.js';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Movies = () => {
   const [titles, getTitles] = useState([]);
@@ -56,7 +57,14 @@ export const Movies = () => {
         {isLoading ? (
           <Loader />
         ) : (
-          titles.map(movie => <li key={movie.id}>{movie.title}</li>)
+          titles.map(movie => (
+            <li key={movie.id}>
+              <Link to={`/movies/${movie.id}`}>
+                {movie.title}
+                {movie.name}
+              </Link>
+            </li>
+          ))
         )}
       </ul>
     </>

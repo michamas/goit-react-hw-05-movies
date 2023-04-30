@@ -17,7 +17,7 @@ export const Cast = () => {
         },
       });
       const results = response.data.cast;
-      console.log(results);
+      //   console.log(results);
       getCast(results);
     } catch (error) {
       console.log(error);
