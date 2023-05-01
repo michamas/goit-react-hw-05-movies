@@ -30,7 +30,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     fetchDetails();
-  }, []);
+  });
 
   return (
     <>
