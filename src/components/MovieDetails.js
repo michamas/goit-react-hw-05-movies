@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
   const { movieID } = useParams();
   const [details, getDetails] = useState([]);
 
   const fetchDetails = async () => {
     const movieDetailsURL = `movie/${movieID}`;
-    setLoading(true);
+    // setLoading(true);
 
     try {
       const response = await axios.get(BASE_URL + movieDetailsURL, {
@@ -24,7 +24,7 @@ const MovieDetails = () => {
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
