@@ -19,7 +19,7 @@ const MovieDetails = () => {
         },
       });
       const result = response.data;
-      //   console.log(result);
+      // console.log(result);
       getDetails(result);
     } catch (error) {
       console.log(error);

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { API_KEY, BASE_URL } from 'components/App.jsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import parse from 'html-react-parser';
 
 const Reviews = () => {
   const { movieID } = useParams();
@@ -33,7 +34,7 @@ const Reviews = () => {
       {reviews.map(review => (
         <article key={review.id}>
           <h5>{review.author}</h5>
-          <p>{review.content}</p>
+          <p>{parse(`${review.content}`)}</p>
         </article>
       ))}
     </>
